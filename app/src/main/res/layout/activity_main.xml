@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar_main"
+            android:background="@color/white"
+            app:menu="@menu/toolbar_menu">
+            <TextView
+                android:id="@+id/app_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="22dp"/>
+            <EditText
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:visibility="invisible"
+                android:inputType="text"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation"
+        android:layout_below="@+id/appBar"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:visibility="invisible"
+        android:id="@+id/playback_card"
+        layout="@layout/card_playback"
+        android:layout_above="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

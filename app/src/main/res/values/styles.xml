@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PlaySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/play_seekbar</item>
+    </style>
+</resources>
